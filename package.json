@@ -1,0 +1,48 @@
+{
+  "name": "nutri-track-back",
+  "version": "1.0.0",
+  "description": "NutriTrack é um aplicativo onde você pode rastrear suas refeições de forma fácil e eficaz, ajudando você a alcançar suas metas de dieta e bem-estar.",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 18"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint src --ext .ts --fix",
+    "knex": "node --import tsx ./node_modules/.bin/knex",
+    "migrate:make": "npm run knex -- migrate:make",
+    "migrate:latest": "npm run knex -- migrate:latest",
+    "migrate:rollback": "npm run knex -- migrate:rollback --all",
+    "build": "tsup src --out-dir build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "nutrition",
+    "tracking",
+    "health",
+    "backend"
+  ],
+  "author": {
+    "name": "Jonas Alves",
+    "email": "devjonasalves@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.0",
+    "knex": "^3.1.0",
+    "pg": "^8.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@types/node": "^20.14.9",
+    "eslint": "^8.57.0",
+    "sqlite3": "^5.1.7",
+    "supertest": "^7.0.0",
+    "tsup": "^8.1.0",
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.2",
+    "vitest": "^1.6.0"
+  }
+}

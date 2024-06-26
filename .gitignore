@@ -1,0 +1,11 @@
+dist/
+build/
+node_modules/
+database/*.db
+
+.env
+.env.local
+.env.*.local
+.env.test
+
+tsd-debug.log
