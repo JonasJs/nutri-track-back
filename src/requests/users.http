@@ -9,6 +9,6 @@ POST {{baseUrl}}/users/
 Content-Type: application/json
 
 {
-  "email": "jonas@gmail.com",
-  "name":  "jonas"
+  "email": "marina@gmail.com",
+  "name":  "Marina"
 }

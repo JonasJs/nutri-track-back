@@ -1,3 +1,4 @@
+import { AppError } from '../../../../errors/AppError'
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO'
 import { IUsersRepository } from '../../repositories/IUsersRepository'
 import { UsersRepository } from '../../repositories/UsersRepository'
@@ -10,7 +11,12 @@ export class CreateUserUseCase {
   }
 
   async execute(data: ICreateUserDTO): Promise<void> {
-    // TODO: Verificar se existe uma conta cadastrada
+    const userByEmail = await this.usersRepository.findByEmail(data.email)
+
+    if (userByEmail) {
+      throw new AppError('User already exists.')
+    }
+
     await this.usersRepository.create(data)
   }
 }
