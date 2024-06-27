@@ -1,7 +1,8 @@
 dist/
 build/
 node_modules/
-database/*.db
+
+*.db
 
 .env
 .env.local
