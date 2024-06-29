@@ -1,3 +1,4 @@
+import { hash } from 'bcrypt'
 import { AppError } from '../../../../errors/AppError'
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO'
 import { IUsersRepository } from '../../repositories/IUsersRepository'
@@ -17,6 +18,12 @@ export class CreateUserUseCase {
       throw new AppError('User already exists.')
     }
 
-    await this.usersRepository.create(data)
+    const passwordHash = await hash(data.password, 8)
+
+    await this.usersRepository.create({
+      name: data.name,
+      email: data.email,
+      password: passwordHash,
+    })
   }
 }

@@ -20,6 +20,7 @@ export class UsersRepository implements IUsersRepository {
       id: randomUUID(),
       name: data.name,
       email: data.email,
+      password: data.password,
     })
   }
 }

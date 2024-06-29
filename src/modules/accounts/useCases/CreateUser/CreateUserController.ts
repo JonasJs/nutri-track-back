@@ -8,6 +8,7 @@ export class CreateUserController {
     const createUserBodySchema = z.object({
       email: z.string(),
       name: z.string(),
+      password: z.string().min(6),
     })
 
     const data = createUserBodySchema.parse(request.body)
