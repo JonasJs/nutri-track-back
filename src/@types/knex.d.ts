@@ -1,11 +1,10 @@
 import 'knex'
+import { UserToken } from '../modules/accounts/entities/UserToken'
+import { User } from '../modules/accounts/entities/User'
 
 declare module 'knex/types/tables' {
-  export interface Users {
-    id: string
-    name: string
-    email: string
-    created_at: string
-    updated_at: string
+  export interface Tables {
+    users: User
+    users_tokens: UserToken
   }
 }
