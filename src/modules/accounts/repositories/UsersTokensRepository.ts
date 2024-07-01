@@ -13,10 +13,8 @@ export class UsersTokensRepository implements IUsersTokensRepository {
       expires_date: data.expires_date,
     }
 
-    const userToken = await knex('users_tokens')
-      .insert(userTokenData)
-      .returning('*')
+    await knex('users_tokens').insert(userTokenData)
 
-    return userToken[0]
+    return userTokenData
   }
 }

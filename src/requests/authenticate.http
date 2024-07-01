@@ -5,10 +5,10 @@
 @baseUrl = {{$dotenv BASE_URL}}
 
 # Create User
-POST {{baseUrl}}/session/
+POST {{baseUrl}}/session
 Content-Type: application/json
 
 {
   "email": "jonas@gmail.com",
-  "name": "Jonas"
+  "password": "123456"
 }
