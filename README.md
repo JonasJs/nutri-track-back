@@ -5,10 +5,12 @@ NutriTrack é seu companheiro ideal para uma alimentação saudável! Com nosso 
 ### Regras da aplicação
 
 - [x] Deve ser possível criar um usuário
-  - [ ] Deve ser cadastrado a senha de forma criptografada
+  - [x] Deve ser cadastrado a senha de forma criptografada
+- [x] Deve ser possivel iniciar uma sessão
+  - [x] Deve ser possivel ter acesso token e refresh toke
+- [ ] Deve ser possivel atualizar o token utilizando o refresh token
 - [ ] Deve ser possível identificar o usuário entre as requisições
-  - [ ] Deve ser possível gerar um token de acesso ao efetuar login
-  - [ ] Deve ser possível criar um refresh token
+- [ ] Deve ser possivel acessar rota internar apenas com o token valido.
 - [ ] Deve ser possível registrar uma refeição feita, com as seguintes informações:
   > *As refeições devem ser relacionadas a um usuário.*
   - Nome
